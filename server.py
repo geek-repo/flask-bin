@@ -1,4 +1,4 @@
-from flask import Flask,redirect,request, render_template
+from flask import Flask,redirect,request, render_template,url_for
 from mainscript import transfer,showdata
 app = Flask(__name__)
 
@@ -16,7 +16,11 @@ def submit():
 
 @app.route('/<name>')
 def my_view_func(name):
-    return render_template('output.html',output=showdata(name))
+    if name=="favicon.ico":
+        return redirect(url_for('static', filename='favicon.ico'), code=302)
+    else:
+
+        return render_template('output.html',output=showdata(name))
 
 
 
