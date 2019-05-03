@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask,redirect,request, render_template
 from mainscript import transfer,showdata
 app = Flask(__name__)
 
@@ -8,7 +8,11 @@ def index():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    return render_template('output2.html',output=transfer(request.form['text']))
+    if len(request.form['text'])>1:
+
+        return render_template('output2.html',output=transfer(request.form['text']))
+    else:
+        return redirect('/')
 
 @app.route('/<name>')
 def my_view_func(name):
