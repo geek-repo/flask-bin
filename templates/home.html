@@ -1,0 +1,8 @@
+<h1>WELCOME TO THE NEW SAVING STUFF SERVICE</h1>
+<p>   Save whatever you wanna paste and hit submit<p>
+
+<form action="{{ url_for('submit') }}" method="post">
+
+    <textarea name="text" rows="30" cols="80"></textarea>
+    <input type="submit">
+</form>
