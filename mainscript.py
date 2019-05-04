@@ -16,8 +16,11 @@ def dehash(data):
 def transfer(data,date):
 
     f=re.findall("[0-9].",date)
-
-    hour,minutes=timer(f[0])
+    if f[0]<="60":
+        hour,minutes=timer(f[0])
+    else:
+        f[0]="10"
+        hour,minutes=timer(f[0])
 
     body={
 
