@@ -24,4 +24,4 @@ It is the light weight service which works like pastebin
 
 # Test Site :- http://weebsec.com:1337/
 
-![](ezgif-4-ec4f4e005dda.gif)
+![](demo.gif)
