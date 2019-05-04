@@ -4,13 +4,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('home.html')
+    times = ['10 Minutes', '15 Minutes', '30 Minutes', '60 Minutes']
+    return render_template('home.html',times=times)
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    if len(request.form['text'])>1:
+    if len(request.form.get('bakra'))>1:
 
-        return render_template('output2.html',output=transfer(request.form['text']))
+        return render_template('output2.html',output=transfer(request.form.get('bakra'),request.form.get('ttt')))
     else:
         return redirect('/')
 
