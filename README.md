@@ -18,7 +18,8 @@ systemctl start elasticsearch.service
 pip3 install -r requirements.txt
 
 curl http://localhost:9200/
-----------------------------------------------------
+
+-------------------------------------------------
 It is the light weight service which works like pastebin 
 
 # Test Site :- http://weebsec.com:1337/
